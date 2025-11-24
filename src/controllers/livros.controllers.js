@@ -23,6 +23,7 @@ export async function listarlivros (req,res){
     } catch (error) {
         res.status(500).json({erro:error.message});
     }
+    
 };
 
 export async function obterlivros (req,res){
