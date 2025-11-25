@@ -1,31 +1,29 @@
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
-// import usuarioRoutes from "./routes/usuario.routes.js"
 import livrosRoutes from "./routes/livros.routes.js"
-// import avaliacoesRoutes from "./routes/avaliacoes.routes.js"
+import usuariosRoutes from "./routes/usuarios.routes.js"
+
 // ============================
 //  Configuração do servidor
 // ============================
 const app = express();
+
 app.use(cors());
 app.use(bodyParser.json());
 
-// Simple request logger for debugging (prints method + URL)
+// Adiciona esse logger para debug (descomenta!)
 app.use((req, res, next) => {
   console.log(new Date().toISOString(), req.method, req.url);
   next();
 });
 
-app.get("/", (req,res)=>{
+app.get("/", (req, res) => {
   res.send("API rodando com sucesso")
 })
 
-
-// app.use("/usuarios", usuarioRoutes)
-// Mount livros router at /livros and keep /listar as an alias
 app.use("/livros", livrosRoutes);
-
+app.use("/usuarios", usuariosRoutes)
 
 // ============================
 //  Inicia o servidor
