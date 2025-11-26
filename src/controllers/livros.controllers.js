@@ -14,13 +14,14 @@ export async function adicionarlivros(req, res) {
       idioma, 
       formato, 
       caminho_capa, 
-      sinopse 
+      sinopse,
+      ativo
     } = req.body;
 
     // Validação básica (ajuste conforme necessário)
     if (!titulo || !autor || !sinopse) {
       return res.status(400).json({
-        message: "Título, autor e sinopse são obrigatórios!",
+        message: "Título, autor, sinopse e ativo são obrigatórios!",
       });
     }
 

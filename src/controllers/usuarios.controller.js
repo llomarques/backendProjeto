@@ -42,7 +42,7 @@ export async function atualizarusuario(req, res) {
     try {
         const { nome, email, senha, perfil, data_nascimento, celular, curso } = req.body;
         await db.execute(
-            "UPDATE usuarios SET nome = ?, email = ?, senha = ?, perfil = ?, data_nascimento = ?, celular = ?, curso = ? WHERE idUsuario = ?",
+            "UPDATE usuarios SET nome = ?, email = ?, senha = ?, perfil = ?, data_nascimento = ?, celular = ?, curso = ? WHERE id= ?",
             [nome, email, senha, perfil, data_nascimento, celular, curso, req.params.id]
         );
         res.json({ mensagem: "Usuário atualizado com sucesso!" });
