@@ -4,7 +4,7 @@ import cors from "cors";
 import livrosRoutes from "./routes/livros.routes.js"
 import usuariosRoutes from "./routes/usuarios.routes.js"
 import reservasRoutes from "./routes/reservas.routes.js"
-
+import favoritosRoutes from "./routes/favoritos.routes.js"
 // ============================
 //  Configuração do servidor
 // ============================
@@ -26,6 +26,7 @@ app.get("/", (req, res) => {
 app.use("/livros", livrosRoutes);
 app.use("/usuarios", usuariosRoutes);
 app.use("/reservas", reservasRoutes);
+app.use("/favoritos",favoritosRoutes)
 
 // ============================
 //  Inicia o servidor

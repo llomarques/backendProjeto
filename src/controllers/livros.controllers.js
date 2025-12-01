@@ -15,7 +15,6 @@ export async function adicionarlivros(req, res) {
       formato, 
       caminho_capa, 
       sinopse,
-      ativo
     } = req.body;
 
     // Validação básica (ajuste conforme necessário)
